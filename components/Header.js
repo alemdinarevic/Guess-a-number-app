@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Platform} from 'react-native';
 
 import Colors from '../constants/colors.js';
 import TitleText from '../components/TitleText.js';
@@ -19,12 +19,16 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     width: '100%',
     height: '20%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderTopWidth: 0,
+    borderColor: Platform.OS === "ios" ? 'black' : 'grey'
   }, 
   headerTitle: {
     textAlign: 'center',
     fontSize: 25,
-    fontFamily: 'open-sans-bold'
+    fontFamily: 'open-sans-bold',
+    color: 'white'
   }
 });
 

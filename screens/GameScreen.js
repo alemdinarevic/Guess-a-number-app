@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {View, Text, StyleSheet, Button, Alert, ScrollView, FlatList, Dimnensions, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, 
+		Alert, ScrollView, FlatList, Dimensions} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 
 import Card from '../components/Card.js';

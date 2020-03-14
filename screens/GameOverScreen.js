@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
+import {View, Text, StyleSheet, Image, 
+				Dimensions, ScrollView} from 'react-native';
 
 import TitleText from '../components/TitleText.js';
 import BodyText from '../components/BodyText.js';
@@ -8,25 +9,23 @@ import MainButton from '../components/MainButton.js';
 
 const GameOverScreen = (props) => {
   return (
-		<ScrollView>
-			<View style={styles.screen}>
-				<TitleText>Game is Over!</TitleText>
-				<View style={styles.imageContainer}>
-					<Image 
-						// source={require('../assets/images/success.png')} 
-						source={{uri: "https://res.cloudinary.com/teepublic/image/private/s--C2CXMYkf--/t_Preview/b_rgb:6e2229,c_limit,f_jpg,h_630,q_90,w_630/v1560345157/production/designs/5050996_0.jpg"}} 
-						style={styles.image} 
-						resizeMode="cover"
-					/>
+			<ScrollView>
+				<View style={styles.screen}>
+					<TitleText>Game is Over!</TitleText>
+					<View style={styles.imageContainer}>
+						<Image 
+							// source={require('../assets/images/success.png')} 
+							source={{uri: "https://res.cloudinary.com/teepublic/image/private/s--C2CXMYkf--/t_Preview/b_rgb:6e2229,c_limit,f_jpg,h_630,q_90,w_630/v1560345157/production/designs/5050996_0.jpg"}} 
+							style={styles.image} 
+							resizeMode="cover"
+						/>
+					</View>
+					<BodyText>Your phone needed <Text style={styles.highlight}>{props.numberOfRounds}</Text> rounds.</BodyText>
+					<BodyText>The number was: <Text style={styles.highlight}>{props.userNumber}</Text></BodyText>
+					<MainButton style={styles.newGameButton} onPress={props.onRestart}>New Game</MainButton>
 				</View>
-				<BodyText>Number of rounds: <Text style={styles.highlight}>{props.numberOfRounds}</Text></BodyText>
-				<BodyText>The number was: <Text style={styles.highlight}>{props.userNumber}</Text></BodyText>
-				<MainButton style={styles.newGameButton} onPress={props.onRestart}>New Game</MainButton>
-			</View>
-		</ScrollView>
-			
+			</ScrollView>	
 	);
-
 }
 
 const styles = StyleSheet.create({
